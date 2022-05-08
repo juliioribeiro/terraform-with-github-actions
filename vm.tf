@@ -10,7 +10,7 @@ resource "aws_key_pair" "key" {
 #   instance_type               = "t3.medium"
 #   key_name                    = aws_key_pair.key.key_name
 #   subnet_id                   = aws_subnet.subnet.0.id
-#   vpc_security_group_ids      = aws_security_group.security_group.id
+#   vpc_security_group_ids      = [aws_security_group.security_group.id]
 #   associate_public_ip_address = true
 
 #   tags = {
