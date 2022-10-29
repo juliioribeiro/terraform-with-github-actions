@@ -7,3 +7,4 @@ Workflows > jobs > Steps
 Terraform plan
 terraform apply
 terraform destroy
+teste
