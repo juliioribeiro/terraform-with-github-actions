@@ -23,7 +23,7 @@ jobs:
       run: terraform validate
     
     - name: Terraform fmt 
-      run: terraform fmt  
+      run: terraform fmt -recursive
 
     - name: Terraform Plan
       run: terraform plan
