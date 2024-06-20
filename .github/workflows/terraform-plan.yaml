@@ -6,25 +6,19 @@ env:
   TF_VAR_aws_pub_key: ${{secrets.AWS_PUBLIC_KEY}}
 
 jobs:
-  terraform:
-    name: terraform
+  terraform_plan:
+    name: Terraform plan
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Terraform Init
-      run: terraform init
-
-    - name: Terraform Validate
-      run: terraform validate
-    
-    - name: Terraform fmt 
-      run: terraform fmt -recursive
-
+      uses: actions/checkout@v4
     - name: Terraform Plan
-      run: terraform plan
+      run: |
+        terraform init
+        terraform fmt -recursive
+        terraform validate
+        terraform plan
   
